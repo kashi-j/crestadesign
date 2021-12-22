@@ -1,0 +1,145 @@
+/* ---------------------------- */
+/* header
+/* ---------------------------- */
+.header{
+  .header-wrapper{
+    .site-title{
+      position: fixed;
+      z-index: 1;
+      top:0;
+      width: 100%;
+      box-sizing: border-box;
+      padding:40px 0 40px calc((120 / 1440) * 100%);
+      background-color: transparent;
+      transition:background-color 0.3s;
+      @include underTab{
+        padding:30px 0 30px calc((15 / 375) * 100%);
+      }
+      &.header-bg{
+        background-color: cl(black-header_bg);
+      }
+      a{
+        font-size: 2.6rem;
+        font-style: italic;
+        color: cl(white);
+      }
+    }
+    .nav-wrapper{
+      position: fixed;
+      z-index: 2;
+      top:20px;
+      right:calc((120 / 1440) * 100%);
+      background-color: transparent;
+      @include underTab{
+        visibility: hidden;
+        opacity: 0;
+        transition: all 1s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:100%;
+        height:100vh;
+        background-color: cl(black-header_bg);
+        right:unset;
+        &.-active{
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+      .header-nav{
+        .nav-list{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          @include underTab{
+            flex-direction: column;
+          }
+          .nav-item{
+            a{
+              display: inline-block;
+              height: 66px;
+              line-height: 66px;
+              color: cl(white);
+              font-size: 1.6rem;
+              padding:0 15px;
+              font-style: italic;
+              @include underTab{
+                display:block;
+                padding:calc((30 / 812) * 100vh) 0;
+                width:100vw;
+                text-align: center;
+                line-height: 22px;
+                height:22px;
+              }
+              &:hover{
+                background-color: cl(white);
+                color:cl(black-header_bg)
+              }
+            }
+          }
+        }
+      }
+    }
+    .burger-btn{
+      display: none;
+      @include underTab{
+        z-index:3;
+        display: block;
+        position: fixed;
+        top:37px;
+        right:calc((15 / 375) * 100%);
+        width: 30px;
+        height: 20px;
+        color:cl(white);
+        background-color: transparent;
+        border: none;
+        &.-active{
+          .bar{
+            top:0;
+            bottom:0;
+            margin:auto;
+            transition: transform 0.3s ease;
+            &.bar_top{
+              transform: rotate(45deg);
+            }
+            &.bar_mid{
+              transform: rotate(45deg);
+            }
+            &.bar_bottom{
+              transform: rotate(-45deg);
+            }
+          }
+        }
+        .bar{
+          position: absolute;
+          width: 100%;
+          height: 3px;
+          background-color: cl(white);
+          display: block;
+          transition: transform 0.3s ease;
+          &.bar_top{
+            top:0;
+          }
+          &.bar_mid{
+            top:0;
+            bottom:0;
+            margin:auto;
+          }
+          &.bar_bottom{
+            bottom: 0;
+          }
+        }
+      }
+    }
+    .section-wrapper{
+      &#contact{
+      background: url("../img/contact-page-bgi@2x.jpg") no-repeat center center / cover;
+      @include underTab{
+        .section-title{
+          text-align: center;
+        }
+      }
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+/* ---------------------------- */
+/* General
+/* ---------------------------- */
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-size: 1.6rem;
+  letter-spacing: .05em;
+  @include NotoSerif;
+  font-weight: bold;
+}
+
+img{
+  vertical-align: bottom;
+  width: 100%;
+}
+
+a{
+  text-decoration: none;
+}
+
+.section-wrapper{
+  height:453px;
+  position: relative;
+}
+
+.section-title{
+  letter-spacing: .1em;
+  font-size: 6rem;
+  font-style: italic;
+  color: cl(black-title_text);
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translateX(-50%) translateY(-50%);
+  @include underTab{
+    font-size: 3rem;
+    width:calc((345/ 375) * 100%);
+    }
+}
+
+.text-right{
+  position: relative;
+  text-align: right;
+  right:calc((121 / 1440) * 100%);
+  margin-left: auto;
+  margin-right:0;
+  @include underTab{
+    right:calc((15 / 375) * 100%);
+  }
+}
+
+.text-left{
+  position:relative;
+  left:calc((48 / 1440) * 100%);
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-right:auto;
+  @include underTab{
+    left:calc((15 / 375) * 100%);
+  }
+}
+
+.text-white{
+  color:cl(white);
+}
+
+.section-bottom{
+  font-size: 9rem;
+  color:cl(white);
+  opacity:.1;
+  display: inline-block;
+  position: absolute;
+  bottom:80px;
+  @include underTab{
+    font-size: 4rem;
+  }
+  &.text-right{
+    color:cl(black-base);
+    opacity:0.05;
+  }
+}
+
+.btn{
+  display: block;
+  background-color: cl(yellow-btn_bg);
+  line-height:59px;
+  width:calc((235 / 700) * 100%);
+  margin:80px auto 80px;
+  text-align: center;
+  border-radius: 30px;
+  box-shadow: 0 0 6px cl(black-btn_shadow);
+  &:hover{
+    cursor: pointer;
+    background-color: #ffbc2c;
+  }
+  @include underTab{
+    width:calc((235 / 375) * 100%);
+  }
+}

@@ -1,0 +1,61 @@
+/* ---------------------------- */
+/* SERVICE
+/* ---------------------------- */
+.section-wrapper{
+  &#service{
+    .card-list_service{
+      display:flex;
+      @include underTab{
+        flex-direction: column;
+      }
+      .card-item_service{
+        width:calc(100% / 3);
+        @include underTab{
+          width: 100%;
+          &+.card-item_service{
+            margin-top: 30px;
+          }
+        }
+        a{
+
+          .card-img_service{
+            height:320px;
+            text-align: center;
+            color:cl(white);
+            font-style: italic;
+            font-size: 4rem;
+            line-height: 320px;
+            &:hover{
+              opacity: 0.5;
+            }
+            @include underTab{
+              font-size: calc((20 /375) * 100vw);
+            }
+          }
+        }
+        &:first-child{
+          a{
+            .card-img_service{
+              background: url("../img/service-img01@2x.jpg") no-repeat center center / cover;
+            }
+          }
+        }
+        &:nth-child(2){
+          a{
+            .card-img_service{
+              background: url("../img/service-img02@2x.jpg") no-repeat center center / cover;
+            }
+          }
+        }
+        &:last-child{
+          a{
+            .card-img_service{
+              background: url("../img/service-img03@2x.jpg") no-repeat center center / cover;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

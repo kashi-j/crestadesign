@@ -1,0 +1,44 @@
+/* ---------------------------- */
+/* CONCEPT
+/* ---------------------------- */
+.section-wrapper{
+  &#concept{
+    .concept-title{
+      text-align: center;
+      padding-bottom: 60px;
+      font-size: 3rem;
+      line-height:calc(50 / 30);
+      @include underTab{
+        font-size: 2rem;
+        width:calc((336 / 375) * 100%);
+        margin:0 auto;
+      }
+    }
+    .content-inner{
+      display: flex;
+      margin:0 auto;
+      width: calc((1000 / 1440) * 100%);
+      justify-content: space-between;
+      @include underTab{
+        flex-direction: column;
+        width: calc((340 / 375) * 100%);
+      }
+      .section-text_concept{
+        width:calc((440 /1000) * 100%);
+        color:cl(black-concept_text);
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        @include underTab{
+          width: 100%;
+        }
+      }
+      .img-wrapper_concept{
+        width:calc((440 /1000) *100%);
+        @include underTab{
+          width: 100%;
+        }
+      }
+    }
+  }
+}

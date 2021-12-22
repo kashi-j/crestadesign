@@ -1,0 +1,188 @@
+/* ---------------------------- */
+/* header
+/* ---------------------------- */
+.header{
+  .header-wrapper{
+    .site-title{
+      position: fixed;
+      z-index: 1;
+      top:0;
+      width: 100%;
+      box-sizing: border-box;
+      padding:20px 0 20px calc((120 / 1440) * 100%);
+      background-color: transparent;
+      transition:background-color 0.3s;
+      @include underTab{
+        padding:30px 0 30px calc((15 / 375) * 100%);
+      }
+      &.header-bg{
+        background-color: cl(black-header_bg);
+      }
+      a{
+        font-size: 2.6rem;
+        font-style: italic;
+        color: cl(white);
+      }
+    }
+    .nav-wrapper{
+      position: fixed;
+      z-index: 2;
+      top:0;
+      right:calc((120 / 1440) * 100%);
+      background-color: transparent;
+      @include underTab{
+        visibility: hidden;
+        opacity: 0;
+        transition: all 1s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:100%;
+        height:100vh;
+        background-color: cl(black-header_bg);
+        right:unset;
+        &.-active{
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+      .header-nav{
+        .nav-list{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          @include underTab{
+            flex-direction: column;
+          }
+          .nav-item{
+            a{
+              display: inline-block;
+              height: 66px;
+              line-height: 66px;
+              color: cl(white);
+              font-size: 1.6rem;
+              padding:0 15px;
+              font-style: italic;
+              @include underTab{
+                display:block;
+                padding:calc((30 / 812) * 100vh) 0;
+                width:100vw;
+                text-align: center;
+                line-height: 22px;
+                height:22px;
+              }
+              &:hover{
+                background-color: cl(white);
+                color:cl(black-header_bg)
+              }
+            }
+          }
+        }
+      }
+    }
+    .burger-btn{
+      display: none;
+      @include underTab{
+        z-index:3;
+        display: block;
+        position: fixed;
+        top:37px;
+        right:calc((15 / 375) * 100%);
+        width: 30px;
+        height: 20px;
+        color:cl(white);
+        background-color: transparent;
+        border: none;
+        &.-active{
+          .bar{
+            top:0;
+            bottom:0;
+            margin:auto;
+            transition: transform 0.3s ease;
+            &.bar_top{
+              transform: rotate(45deg);
+            }
+            &.bar_mid{
+              transform: rotate(45deg);
+            }
+            &.bar_bottom{
+              transform: rotate(-45deg);
+            }
+          }
+        }
+        .bar{
+          position: absolute;
+          width: 100%;
+          height: 3px;
+          background-color: cl(white);
+          display: block;
+          transition: transform 0.3s ease;
+          &.bar_top{
+            top:0;
+          }
+          &.bar_mid{
+            top:0;
+            bottom:0;
+            margin:auto;
+          }
+          &.bar_bottom{
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  .copy{
+    position: absolute;
+    bottom:calc((177 / 752) * 100vh);
+    left:calc((120/1440) * 100%);
+    color:cl(white);
+    text-align: center;
+    white-space: nowrap;
+    @include underTab{
+      left:50%;
+      transform:translateX(-50%);
+      top:calc((202 / 599) * 100vh);
+    }
+    .main-copy{
+      font-size: 7rem;
+      line-height: 1;
+      padding-bottom: 4rem;
+      letter-spacing: 0.08em;
+      @include underTab{
+        font-size: 3.7rem;
+        padding-bottom:calc((60 / 599) * 100vh);
+      }
+    }
+    .sub-copy{
+      font-size:4rem;
+      @include underTab{
+        font-size:3rem;
+        line-height: calc(5 / 3);
+      }
+    }
+  }
+
+  .bg-1{
+    // width:100%;
+    height:100vh;
+    background: url("../img/fv-bgi_01@2x.jpg") no-repeat center center / cover;
+  }
+  .bg-2{
+    // width:100%;
+    height: 100vh;
+    background: url("../img/fv-bgi_02@2x.jpg") no-repeat center center / cover;
+    position: absolute;
+    &.bg-passive{
+      opacity:0;
+    }
+  }
+  .fade-in{
+    opacity: 1;
+    transition: opacity 2s 0s ease-out;
+  }
+  .fade-out{
+    opacity: 0;
+    transition: opacity 2s 2s ease-in;
+  }
+}

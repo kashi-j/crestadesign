@@ -1,0 +1,62 @@
+/* ---------------------------- */
+/* Base
+/* ---------------------------- */
+
+// COLORS
+// @inlcude cl(black);
+//--------------------------------------------------
+
+$colors: (
+	white: #fff,
+	yellow-btn_bg:#ffd724,
+	black-base:#171717,
+	black-bottom_text:#171717,
+	black-concept_text:#171717,
+	black-title_text: #282F35,
+	black-header_bg: #282F35,
+	black-btn_shadow:#1B1310,
+	black-conscept_text:#1B1310,
+	black-works_text:#141414,
+);
+
+
+
+@function cl($key) {
+	@return map-get($colors, $key);
+}
+
+// FONT
+// @inlcude TimesNewRoman;
+//--------------------------------------------------
+
+@mixin NotoSerif {
+	// font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+	font-family: "Noto Serif", "Noto Serif JP", serif;
+}
+@mixin NotoSerifJP {
+	font-family: "Noto Serif JP","Noto Serif", serif;
+}
+
+// RESPONSIVE
+// @include overTab
+//--------------------------------------------------
+
+@mixin underTab {
+  @media print,screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+.sp_only {
+	display: none;
+	@include underTab {
+		display: block;
+	}
+}
+
+.pc_only {
+	display: block;
+	@include underTab {
+		display: none;
+	}
+}
